@@ -397,16 +397,16 @@ export default function Home() {
           </div>
           <div className="md:w-1/3 relative">
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-navy-100 shadow-xl">
-              <Image
+        <Image
                 src="/profile.jpg"
                 alt="Mert Sukusu"
                 fill
                 className="object-cover"
-                priority
-              />
+          priority
+        />
             </div>
             <div className="absolute -z-10 top-0 right-0 w-full h-full">
-              <Image
+            <Image
                 src="/bilgisayar-background.jpg"
                 alt="Background"
                 fill
@@ -430,8 +430,8 @@ export default function Home() {
                     <a
                       key={index}
                       href={tech.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                       className="flex-none w-12 h-12 relative group hover:-translate-y-1 transition-transform duration-300"
                     >
                       <img

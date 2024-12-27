@@ -114,7 +114,7 @@ export default function Support() {
 
   return (
     <div className="min-h-screen bg-navy-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div 
+      <div
         className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
         style={{
           backgroundImage: 'url(/manzara.jpg)',
@@ -141,9 +141,8 @@ export default function Support() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`mt-1 block w-full rounded-md bg-white/10 border-transparent focus:border-white focus:bg-white/20 focus:ring-0 text-white ${
-                  errors.name ? 'border-red-500' : ''
-                }`}
+                className={`mt-1 block w-full rounded-md bg-white/10 border-transparent focus:border-white focus:bg-white/20 focus:ring-0 text-white ${errors.name ? 'border-red-500' : ''
+                  }`}
                 placeholder="John Doe"
                 required
               />
@@ -162,9 +161,8 @@ export default function Support() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`mt-1 block w-full rounded-md bg-white/10 border-transparent focus:border-white focus:bg-white/20 focus:ring-0 text-white ${
-                  errors.email ? 'border-red-500' : ''
-                }`}
+                className={`mt-1 block w-full rounded-md bg-white/10 border-transparent focus:border-white focus:bg-white/20 focus:ring-0 text-white ${errors.email ? 'border-red-500' : ''
+                  }`}
                 placeholder="john@example.com"
                 required
               />
@@ -183,9 +181,8 @@ export default function Support() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className={`mt-1 block w-full rounded-md bg-white/10 border-transparent focus:border-white focus:bg-white/20 focus:ring-0 text-white ${
-                  errors.phone ? 'border-red-500' : ''
-                }`}
+                className={`mt-1 block w-full rounded-md bg-white/10 border-transparent focus:border-white focus:bg-white/20 focus:ring-0 text-white ${errors.phone ? 'border-red-500' : ''
+                  }`}
                 placeholder="+1 (555) 000-0000"
               />
               {errors.phone && (
@@ -202,9 +199,8 @@ export default function Support() {
                 name="country"
                 value={formData.country}
                 onChange={handleChange}
-                className={`mt-1 block w-full rounded-md bg-white/10 border-transparent focus:border-white focus:bg-white/20 focus:ring-0 text-white ${
-                  errors.country ? 'border-red-500' : ''
-                }`}
+                className={`mt-1 block w-full rounded-md bg-white/10 border-transparent focus:border-white focus:bg-white/20 focus:ring-0 text-white ${errors.country ? 'border-red-500' : ''
+                  }`}
                 required
               >
                 <option value="">Select a country</option>
@@ -229,9 +225,8 @@ export default function Support() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className={`mt-1 block w-full rounded-md bg-white/10 border-transparent focus:border-white focus:bg-white/20 focus:ring-0 text-white ${
-                  errors.message ? 'border-red-500' : ''
-                }`}
+                className={`mt-1 block w-full rounded-md bg-white/10 border-transparent focus:border-white focus:bg-white/20 focus:ring-0 text-white ${errors.message ? 'border-red-500' : ''
+                  }`}
                 placeholder="Your message here..."
                 required
               />
@@ -244,9 +239,8 @@ export default function Support() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-navy-600 hover:bg-navy-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-500 ${
-                  isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
-                }`}
+                className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-navy-600 hover:bg-navy-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-500 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
