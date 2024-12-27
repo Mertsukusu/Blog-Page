@@ -11,6 +11,7 @@ My personal blog page built with Next.js, TypeScript, and Tailwind CSS.
 - Technology showcase section
 - Blog posts section
 - Projects showcase
+- Dark/Light mode support
 
 ## Technologies Used
 
@@ -25,8 +26,8 @@ My personal blog page built with Next.js, TypeScript, and Tailwind CSS.
 First, clone the repository:
 
 ```bash
-git clone https://github.com/KULLANICI_ADINIZ/blogpage.git
-cd blogpage
+git clone https://github.com/Mertsukusu/Blog-Page.git
+cd Blog-Page
 ```
 
 Install dependencies:
