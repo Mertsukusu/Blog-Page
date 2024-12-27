@@ -381,20 +381,6 @@ export default function Home() {
               AI-based solution and architecture creation.
             </p>
 
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">Certifications:</h3>
-              <div className="flex flex-wrap justify-center gap-2">
-                {certifications.map((cert, index) => (
-                  <span 
-                    key={index}
-                    className="bg-navy-50 text-navy-700 px-3 py-1 rounded-full text-sm border border-navy-200"
-                  >
-                    {cert}
-                  </span>
-                ))}
-              </div>
-            </div>
-
             <div className="flex flex-col items-center gap-8">
               <Link 
                 href="/support" 
@@ -410,77 +396,39 @@ export default function Home() {
               </h2>
             </div>
           </div>
-        </div>
 
-        {/* Technologies Section */}
-        <div className="mt-16 overflow-hidden">
-          <h2 className="text-2xl font-bold mb-8 text-navy-900 text-center">Technologies & Tools</h2>
-          <div className="relative w-full">
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-navy-50 via-navy-50 to-transparent z-10" />
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-navy-50 via-navy-50 to-transparent z-10" />
-            <div className="relative z-20">
-              <div className="flex">
-                <div className="flex gap-12 animate-infinite-scroll whitespace-nowrap">
-                  {[...technologies, ...technologies].map((tech, index) => (
-                    <a
-                      key={index}
-                      href={tech.url}
-          target="_blank"
-          rel="noopener noreferrer"
-                      className="flex-none w-12 h-12 relative group hover:-translate-y-1 transition-transform duration-300"
-                    >
-                      <img
-                        src={tech.icon}
-                        alt={tech.name}
-                        className="w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                        style={{ maxWidth: '100%', height: 'auto' }}
-                      />
-                      <div className="opacity-0 group-hover:opacity-100 absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-sm text-navy-600 whitespace-nowrap transition-opacity bg-white/80 px-2 py-1 rounded">
-                        {tech.name}
-                      </div>
-                    </a>
-                  ))}
+          {/* Technologies Section */}
+          <div className="w-full mt-16 overflow-hidden">
+            <h2 className="text-2xl font-bold mb-8 text-navy-900 text-center">Experienced Technologies & Tools</h2>
+            <div className="relative w-full">
+              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-navy-50 via-navy-50 to-transparent z-10" />
+              <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-navy-50 via-navy-50 to-transparent z-10" />
+              <div className="relative z-20">
+                <div className="flex">
+                  <div className="flex gap-12 animate-infinite-scroll whitespace-nowrap">
+                    {[...technologies, ...technologies].map((tech, index) => (
+                      <a
+                        key={index}
+                        href={tech.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-none w-12 h-12 relative group hover:-translate-y-1 transition-transform duration-300"
+                      >
+                        <img
+                          src={tech.icon}
+                          alt={tech.name}
+                          className="w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                          style={{ maxWidth: '100%', height: 'auto' }}
+                        />
+                        <div className="opacity-0 group-hover:opacity-100 absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-sm text-navy-600 whitespace-nowrap transition-opacity bg-white/80 px-2 py-1 rounded">
+                          {tech.name}
+                        </div>
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="max-w-6xl mx-auto px-4 py-16 bg-gray-50">
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index} 
-              className="flex flex-col items-center text-center group bg-white p-8 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300"
-            >
-              <div className="mb-8 text-gray-800">
-                {service.icon}
-              </div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">{service.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section className="max-w-5xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-navy-900">Experience & Projects</h2>
-        
-        {/* Latest Achievements */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-6 text-navy-900">Achievements in my latest projects</h3>
-          <div className="bg-navy-50 p-8 rounded-lg">
-            <ul className="space-y-4">
-              {projects[0].items.map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-navy-600 mr-3">→</span>
-                  <span className="text-navy-700">{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>
@@ -493,6 +441,41 @@ export default function Home() {
             View All →
           </Link>
         </div>
+
+        {/* LinkedIn Featured Posts */}
+        <div className="flex justify-center mb-16">
+          <a
+            href="https://www.linkedin.com/feed/update/urn:li:activity:7252722757811994626/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow max-w-2xl w-full"
+          >
+            <div className="relative h-48 bg-navy-100">
+              <Image
+                src="/linkedin/national-grid-expo.jpg"
+                alt="National Grid IT&D Innovation Expo"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-3 text-navy-900 group-hover:text-navy-600 transition-colors">
+                National Grid IT&D Innovation Expo
+              </h3>
+              <p className="text-navy-600">
+                Proud to have participated in last month's IT&D Innovation Expo at National Grid! Our team presented several innovative solutions including Digital Twin of Meter, Mainframe Virtualization on Cloud, GridGPT, and Testing Platforms - showcasing how we're driving transformation across the organization.
+              </p>
+              <div className="mt-4 flex items-center text-navy-500 text-sm">
+                <span>Read on LinkedIn</span>
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-8">
           {blogPosts.map(post => (
             <article key={post.id} className="group">

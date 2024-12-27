@@ -76,13 +76,8 @@ export default function Navbar() {
             >
               Support
             </Link>
-            <Link 
-              href="/about" 
-              className={`font-medium transition-colors hover:text-navy-900 ${
-                isScrolled ? 'text-navy-600' : 'text-navy-800'
-              }`}
-            >
-              About
+            <Link href="/about" className="text-gray-600 hover:text-black">
+              About Me
             </Link>
           </div>
         </div>

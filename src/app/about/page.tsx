@@ -2,14 +2,22 @@
 
 import Image from 'next/image'
 
-const linkedinPosts = [
-  {
-    id: 1,
-    title: "National Grid IT&D Innovation Expo",
-    description: "Proud to have participated in last month's IT&D Innovation Expo at National Grid! Our team presented several innovative solutions including Digital Twin of Meter, Mainframe Virtualization on Cloud, GridGPT, and Testing Platforms - showcasing how we're driving transformation across the organization.",
-    image: "/linkedin/national-grid-expo.jpg",
-    link: "https://www.linkedin.com/feed/update/urn:li:activity:7252722757811994626/"
-  }
+const achievements = [
+  "Developed React & TypeScript frontend for Advanced Meter Infrastructure with 30% performance boost",
+  "Implemented Playwright automation reducing test time by 30% for GPT website",
+  "Led mainframe modernization initiatives for utility company's core systems",
+  "Designed microservices architecture for new utility company website using Python & FastAPI",
+  "Led test data management with Delphix, achieving 35% faster data preparation",
+  "Optimized PostgreSQL schemas reducing query times by 30%",
+  "Managed CI/CD with Jenkins reducing release times by 25%"
+]
+
+const certifications = [
+  "Python Certified Developer",
+  "Docker Certified Associate",
+  "Azure Solutions Architect",
+  "Delphix Certified Professional",
+  "GenRocket Certified Engineer"
 ]
 
 export default function About() {
@@ -44,69 +52,34 @@ export default function About() {
         </div>
       </section>
 
-      {/* Featured Posts Section */}
+      {/* Achievements Section */}
       <section>
-        <h2 className="text-3xl font-bold mb-8 text-navy-900">Featured Posts</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {linkedinPosts.map(post => (
-            <a
-              key={post.id}
-              href={post.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <div className="relative h-48 bg-navy-100">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-navy-900 group-hover:text-navy-600 transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-navy-600">
-                  {post.description}
-                </p>
-                <div className="mt-4 flex items-center text-navy-500 text-sm">
-                  <span>Read on LinkedIn</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </div>
-              </div>
-            </a>
-          ))}
+        <h2 className="text-3xl font-bold mb-8 text-navy-900">Achievements</h2>
+        <div className="bg-navy-50 p-8 rounded-lg">
+          <ul className="space-y-4">
+            {achievements.map((achievement, index) => (
+              <li key={index} className="flex items-start">
+                <span className="text-navy-600 mr-3">→</span>
+                <span className="text-navy-700">{achievement}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* Career Journey Section */}
+      {/* Certifications Section */}
       <section>
-        <h2 className="text-3xl font-bold mb-8 text-navy-900">Career Journey</h2>
-        <div className="bg-navy-50 rounded-xl p-8">
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold text-navy-900">National Grid</h3>
-              <p className="text-navy-600 mt-2">
-                Leading digital transformation initiatives and implementing innovative testing solutions.
-                Key achievements include developing an Advanced Meter Infrastructure portal and
-                modernizing legacy systems.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-navy-900">Technical Expertise</h3>
-              <ul className="mt-4 space-y-2 text-navy-600">
-                <li>• AI-Powered Test Automation</li>
-                <li>• Test Data Management & Synthetic Data Generation</li>
-                <li>• Enterprise Software Development</li>
-                <li>• Modern Web Development (Next.js, React, TypeScript)</li>
-                <li>• Cloud Solutions (Azure)</li>
-              </ul>
-            </div>
+        <h2 className="text-3xl font-bold mb-8 text-navy-900">Certifications</h2>
+        <div className="bg-navy-50 p-8 rounded-lg">
+          <div className="flex flex-wrap justify-center gap-3">
+            {certifications.map((cert, index) => (
+              <span 
+                key={index}
+                className="bg-white text-navy-700 px-4 py-2 rounded-full text-sm border border-navy-200 hover:border-navy-400 transition-colors"
+              >
+                {cert}
+              </span>
+            ))}
           </div>
         </div>
       </section>

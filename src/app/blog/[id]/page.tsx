@@ -1,124 +1,124 @@
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import React from 'react'
 
-type BlogPost = {
-  id: number
-  title: string
-  content: React.ReactNode
-  date: string
-  author: string
-}
-
-type BlogPosts = {
-  [key: string]: BlogPost
-}
-
-const blogPosts: BlogPosts = {
-  '1': {
+const blogPosts = [
+  {
     id: 1,
-    title: 'AI and Our Future',
-    content: (
-      <>
-        <h1 className="text-4xl font-bold mb-8">AI and Our Future</h1>
-        
-        <p className="mb-6">
-          Artificial Intelligence technology has made tremendous progress in recent years. In this article,
-          I will provide a detailed analysis of how AI affects our lives and the changes that await us in the future.
-        </p>
+    title: "Mainframe Modernization: A Journey to Cloud",
+    date: "March 15, 2024",
+    category: "Cloud Computing",
+    excerpt: "Exploring the challenges and solutions in modernizing legacy mainframe systems for cloud environments.",
+    content: `
+      Mainframe modernization is a critical journey that many enterprises are undertaking as they move towards cloud-native architectures. This transformation involves not just lifting and shifting applications, but reimagining them for the cloud era.
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">AI Today</h2>
-        <p className="mb-4">AI is now present in every aspect of our lives:</p>
-        <ul className="list-disc pl-6 mb-6">
-          <li className="mb-2">Smart Assistants</li>
-          <li className="mb-2">Autonomous Vehicles</li>
-          <li className="mb-2">Medical Diagnosis Systems</li>
-          <li className="mb-2">Personalized Recommendations</li>
-        </ul>
+      Key Aspects of Mainframe Modernization:
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">Looking to the Future</h2>
-        <p className="mb-4">As AI technology continues to develop in the coming years:</p>
-        <ol className="list-decimal pl-6 mb-6">
-          <li className="mb-2">The business world will undergo a major transformation</li>
-          <li className="mb-2">Education systems will become personalized</li>
-          <li className="mb-2">Healthcare services will become more accessible</li>
-        </ol>
+      1. Assessment and Planning
+      - Analyzing existing mainframe applications
+      - Identifying dependencies and integration points
+      - Creating a phased migration strategy
 
-        <h3 className="text-xl font-bold mt-8 mb-4">Conclusion</h3>
-        <p className="mb-6">
-          AI will be an important tool in overcoming the challenges humanity faces. However,
-          this technology needs to be used ethically and responsibly.
-        </p>
-      </>
-    ),
-    date: '2023-12-27',
-    author: 'Mert Sukusu'
+      2. Technical Challenges
+      - Data migration and validation
+      - Maintaining business logic integrity
+      - Ensuring performance parity
+      - Managing security and compliance
+
+      3. Cloud Architecture Decisions
+      - Choosing between lift-and-shift vs. re-architecting
+      - Selecting appropriate cloud services
+      - Implementing modern DevOps practices
+
+      4. Benefits Realized
+      - Improved scalability and flexibility
+      - Reduced operational costs
+      - Enhanced development agility
+      - Better integration capabilities
+
+      The journey to cloud modernization requires careful planning, expert knowledge, and a clear understanding of business objectives. Success in this transformation can lead to significant competitive advantages and operational improvements.
+    `
   },
-  '2': {
+  {
     id: 2,
-    title: 'Modern Web Development Techniques',
-    content: (
-      <>
-        <h1 className="text-4xl font-bold mb-8">Modern Web Development Techniques</h1>
-        
-        <p className="mb-6">
-          The world of web development is constantly evolving. Let's explore how modern technologies
-          like Next.js, React, and TypeScript are changing and improving our development processes.
-        </p>
+    title: "Test Automation with AI: The Future is Here",
+    date: "March 10, 2024",
+    category: "Testing",
+    excerpt: "How artificial intelligence is revolutionizing test automation and improving software quality.",
+    content: `
+      Artificial Intelligence is transforming the landscape of test automation, bringing unprecedented efficiency and intelligence to software testing processes. This evolution is changing how we approach quality assurance in software development.
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">Advantages of Next.js</h2>
-        <ul className="list-disc pl-6 mb-6">
-          <li className="mb-2">Server-Side Rendering (SSR)</li>
-          <li className="mb-2">Static Site Generation (SSG)</li>
-          <li className="mb-2">Automatic Code Splitting</li>
-          <li className="mb-2">API Routes</li>
-        </ul>
+      Key Innovations in AI-Powered Testing:
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">Safe Code with TypeScript</h2>
-        <p className="mb-4">
-          TypeScript adds type safety to JavaScript, making the development process safer and more efficient:
-        </p>
-        <ul className="list-disc pl-6 mb-6">
-          <li className="mb-2">Compile-time Error Detection</li>
-          <li className="mb-2">Better IDE Support</li>
-          <li className="mb-2">Code Readability</li>
-          <li className="mb-2">Easier Maintenance</li>
-        </ul>
+      1. Self-Healing Test Scripts
+      - Automatic adaptation to UI changes
+      - Smart element location strategies
+      - Reduced maintenance overhead
 
-        <h3 className="text-xl font-bold mt-8 mb-4">The Future of Modern Web Development</h3>
-        <p className="mb-6">
-          Modern web technologies are continuously improving our development processes and enhancing user experience.
-          Learning and implementing these technologies is no longer a choice but a necessity for a web developer.
-        </p>
-      </>
-    ),
-    date: '2023-12-26',
-    author: 'Mert Sukusu'
+      2. Intelligent Test Generation
+      - AI-driven test case creation
+      - Automated test scenario identification
+      - Risk-based test prioritization
+
+      3. Predictive Analytics
+      - Test coverage optimization
+      - Defect prediction
+      - Performance bottleneck identification
+
+      4. Visual Testing Enhancements
+      - Automated visual regression testing
+      - Layout anomaly detection
+      - Cross-browser compatibility verification
+
+      The integration of AI in test automation not only improves efficiency but also enables teams to focus on more strategic testing activities while ensuring comprehensive coverage and faster release cycles.
+    `
   }
+]
+
+export function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    id: post.id.toString(),
+  }))
 }
 
-async function getBlogPost(id: string) {
-  return blogPosts[id] || null
-}
-
-export default async function BlogPost({ params }: { params: { id: string } }) {
-  const post = await getBlogPost(params.id)
+export default function BlogPost({ params }: { params: { id: string } }) {
+  const post = blogPosts.find(post => post.id === parseInt(params.id))
 
   if (!post) {
     notFound()
   }
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-        <div className="text-gray-600">
-          {post.date} • {post.author}
-        </div>
-      </header>
+    <div className="max-w-4xl mx-auto px-4 py-16">
+      <Link 
+        href="/blog"
+        className="text-navy-600 hover:text-navy-800 inline-flex items-center mb-8"
+      >
+        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Blog
+      </Link>
 
-      <div className="prose prose-lg max-w-none">
-        {post.content}
-      </div>
-    </article>
+      <article>
+        <header className="mb-8">
+          <h1 className="text-4xl font-bold text-navy-900 mb-4">{post.title}</h1>
+          <div className="flex items-center text-gray-500">
+            <span>{post.date}</span>
+            <span className="mx-2">•</span>
+            <span>{post.category}</span>
+          </div>
+        </header>
+
+        <div className="prose prose-lg max-w-none">
+          {post.content.split('\n').map((paragraph, index) => (
+            paragraph.trim() && (
+              <p key={index} className="mb-4 text-navy-700">
+                {paragraph.trim()}
+              </p>
+            )
+          ))}
+        </div>
+      </article>
+    </div>
   )
 } 
