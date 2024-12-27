@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import { Poppins, Playfair_Display, Merriweather } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 
@@ -7,6 +7,20 @@ const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   display: 'swap',
+  variable: '--font-poppins',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair',
+})
+
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  display: 'swap',
+  variable: '--font-merriweather',
 })
 
 export const metadata: Metadata = {
@@ -21,7 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={`${poppins.variable} ${playfair.variable} ${merriweather.variable} font-sans`}>
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-grow">
