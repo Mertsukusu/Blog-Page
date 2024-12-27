@@ -4,9 +4,9 @@
 
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
   }
-  
+
   body {
     @apply bg-white text-navy-900;
   }
@@ -22,4 +22,4 @@
   .text-balance {
     text-wrap: balance;
   }
-} 
+}

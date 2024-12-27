@@ -357,25 +357,33 @@ export default function Home() {
       <section className="relative max-w-5xl mx-auto px-4 pt-20 pb-16">
         <div className="absolute inset-0 bg-navy-50 rounded-3xl" />
         
-        <div className="relative flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-2/3">
-            <h2 className="text-4xl font-bold mb-6 leading-tight">
-              <div className="text-navy-900">Design more value</div>
-              <div className="text-navy-900 flex items-center gap-2">
-                for your <AnimatedText />
-              </div>
-            </h2>
-            <div className="text-2xl text-gray-900 mb-6 font-display">
+        <div className="relative flex flex-col items-center gap-8">
+          <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-navy-100 shadow-xl">
+            <Image
+              src="/profile.jpg"
+              alt="Mert Sukusu"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          <div className="text-center">
+            <div className="text-2xl text-gray-900 mb-8 font-display">
               Lead Software Engineer
             </div>
-            <p className="text-xl text-navy-600 max-w-2xl mb-6 font-serif leading-relaxed">
-              Live in Massachusetts, Mert Sukusu is a passionate Lead Software Engineer dedicated to designing more value 
+          </div>
+
+          <div className="max-w-3xl text-center">
+            <p className="text-xl text-navy-600 mb-8 font-serif leading-relaxed">
+              Live in Massachusetts, a passionate Lead Software Engineer dedicated to designing more value 
               for your business through full-stack web and app development, test automation, technical consulting, 
               AI-based solution and architecture creation.
             </p>
+
             <div className="mb-8">
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Certifications:</h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-center gap-2">
                 {certifications.map((cert, index) => (
                   <span 
                     key={index}
@@ -386,33 +394,20 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="flex gap-4">
+
+            <div className="flex flex-col items-center gap-8">
               <Link 
                 href="/support" 
-                className="bg-navy-900 text-white px-8 py-3 rounded-full hover:bg-navy-800 transition-colors"
+                className="bg-navy-900 text-white px-8 py-3 rounded-full hover:bg-navy-800 transition-colors text-lg"
               >
                 Let's Talk
               </Link>
-            </div>
-          </div>
-          <div className="md:w-1/3 relative">
-            <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-navy-100 shadow-xl">
-        <Image
-                src="/profile.jpg"
-                alt="Mert Sukusu"
-                fill
-                className="object-cover"
-          priority
-        />
-            </div>
-            <div className="absolute -z-10 top-0 right-0 w-full h-full">
-            <Image
-                src="/bilgisayar-background.jpg"
-                alt="Background"
-                fill
-                className="object-cover opacity-20"
-                priority
-              />
+              <h2 className="text-4xl font-bold leading-tight">
+                <div className="text-navy-900">Design more value</div>
+                <div className="text-navy-900 flex items-center gap-2">
+                  for your <AnimatedText />
+                </div>
+              </h2>
             </div>
           </div>
         </div>
